@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  
+
+  constructor(private router: Router) { }
   ngOnInit() {
   }
-  
+
+  addNewBook(): void {
+    this.router.navigate(["addbook"]);
+  }
+
 }

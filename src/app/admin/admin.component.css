@@ -1,0 +1,11 @@
+app-book-list {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    cursor: pointer;
+    margin-left: 45%;
+ }

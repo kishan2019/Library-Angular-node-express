@@ -6,31 +6,33 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
     imports: [
-        MatButtonModule, 
-        MatCardModule, 
-        MatDialogModule, 
+        MatButtonModule,
+        MatCardModule,
+        MatDialogModule,
         MatInputModule,
-        MatToolbarModule, 
-        MatMenuModule, 
-        MatIconModule, 
+        MatToolbarModule,
+        MatMenuModule,
+        MatIconModule,
+        MatExpansionModule,
         
     ],
 
     exports: [
-        MatButtonModule, 
-        MatCardModule, 
-        MatDialogModule, 
-        MatInputModule, 
-        MatToolbarModule, 
-        MatMenuModule, 
-        MatIconModule, 
-        ]
+        MatButtonModule,
+        MatCardModule,
+        MatDialogModule,
+        MatInputModule,
+        MatToolbarModule,
+        MatMenuModule,
+        MatIconModule,
+        MatExpansionModule,
+        
+    ]
 })
 
-export class MaterialModule {
-
-}
+export class MaterialModules { }

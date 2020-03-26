@@ -1,0 +1,13 @@
+.book-add {
+        margin: 2rem auto;  
+    }
+
+mat-form-field {
+    width: 80%;
+}
+
+form {
+    width: 600px;
+    height: 400px;
+    
+}

@@ -1,10 +1,9 @@
-.login-form{
+.login-form {
     margin: 10% auto;
 }
 
 mat-form-field {
     width: 80%;
-
 }
 
 form {

@@ -1,0 +1,37 @@
+<section class="book-add" fxLayoutAlign="center">
+<mat-card>
+
+    <mat-card-header>
+      <mat-card-title>Add New Books</mat-card-title>
+    </mat-card-header>
+
+    <form (submit)="onAddBook(bookForm)" #bookForm="ngForm" fxLayout="column" fxLayoutAlign="center center">
+      <mat-form-field>
+        <input 
+        matInput 
+        name="title" 
+        placeholder="title"
+        ngModel
+        required
+        #title="ngModel">
+        <mat-error *ngIf="title.invalid">Please Enter a Title</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input  
+        matInput 
+        name="author"
+        placeholder="author"
+        ngModel
+        required
+        #author="ngModel">
+        <mat-error *ngIf="author.invalid">Please Enter a author</mat-error>
+      </mat-form-field>
+      <button 
+      color="accent" 
+      mat-raised-button 
+      type="submit">Add Book</button>
+    </form>
+  </mat-card>
+</section>
+   

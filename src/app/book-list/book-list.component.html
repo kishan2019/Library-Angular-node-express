@@ -1,0 +1,15 @@
+<mat-accordion *ngIf="books.length > 0">
+    <mat-expansion-panel *ngFor="let book of books">
+      <mat-expansion-panel-header>
+         {{book.title}}
+      </mat-expansion-panel-header>
+      <p>{{book.author}}</p>
+      <mat-action-row>
+        <button mat-button color="primary">Edit</button>
+        <button mat-button color="warn">Delete</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <p class="info-text mat-body-1" *ngIf="books.length <= 0">Not single book yet</p>
+  
+  
