@@ -8,4 +8,6 @@ app-book-list {
     bottom: 0;
     cursor: pointer;
     margin-left: 45%;
+    height: max-content;
+    font-size: large;
  }
