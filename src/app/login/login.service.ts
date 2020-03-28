@@ -1,4 +1,4 @@
-import { Subject } from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,13 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  private userNameSource = new Subject<string>();
-  user$ = this.userNameSource.asObservable();
+  private nameSource = new BehaviorSubject<string>("");
+  currentUser = this.nameSource.asObservable();
 
   constructor() { }
 
-  sendUserName(name: string){
-    this.userNameSource.next(name);
-
+  setUserName(username: string){
+    this.nameSource.next(username);
   }
 }

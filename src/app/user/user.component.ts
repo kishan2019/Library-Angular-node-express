@@ -1,3 +1,4 @@
+import { LoginService } from './../login/login.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  username: string;
 
-    ngOnInit(){
+  constructor( private data: LoginService) { }
 
-    }
+
+ngOnInit(){
+  this.data.currentUser.subscribe(username => this.username = username)
+ }
  
 }

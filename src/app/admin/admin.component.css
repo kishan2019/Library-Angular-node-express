@@ -11,3 +11,8 @@ app-book-list {
     height: max-content;
     font-size: large;
  }
+
+ .greet {
+    text-align: center;
+    margin: 2rem auto;
+}

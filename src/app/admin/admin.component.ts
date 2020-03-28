@@ -1,3 +1,4 @@
+import { LoginService } from './../login/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,9 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+username: string;
 
-  constructor(private router: Router) { }
+
+  constructor(private router: Router, private data: LoginService) { }
   ngOnInit() {
+    this.data.currentUser.subscribe(username => this.username = username)
   }
 
   addNewBook(): void {
