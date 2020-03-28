@@ -1,3 +1,4 @@
+import { ViewListComponent } from './view-list/view-list.component';
 import { UserComponent } from './user/user.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +25,8 @@ import { BookListComponent } from './book-list/book-list.component';
     AdminComponent,
     BookAddComponent,
     BookListComponent,
-    UserComponent
+    UserComponent,
+    ViewListComponent
   ],
   imports: [
     BrowserModule,

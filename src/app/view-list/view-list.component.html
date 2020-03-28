@@ -1,0 +1,15 @@
+<section *ngIf="books.length > 0">
+    <mat-card *ngFor="let book of books">
+      <h2> {{book.title}}</h2>
+      <p>{{book.author}}</p>
+      <div *ngIf="book.reserved; else reservebtn">
+        <button mat-raised-button color="accent" (click)="onAddStatus()">reserved</button>
+      </div>
+      <ng-template #reservebtn>
+        <button mat-raised-button color="accent" (click)="onAddStatus()">reserve</button>
+      </ng-template>
+      
+    </mat-card>
+   </section>
+   <p class="info-text mat-body-1" *ngIf="books.length <= 0">Not single book yet</p>
+   

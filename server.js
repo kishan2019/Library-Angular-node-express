@@ -20,27 +20,32 @@ app.get("/api/books", (req, res, next) => {
         {
             id: "121",
             title: "first Title",
-            author: "first author"
+            author: "first author",
+            reserved: true
         },
         {
             id: "122",
             title: "second Title",
-            author: "second author"
+            author: "second author",
+            reserved: false
         },
         {
             id: "123",
             title: "third Title",
-            author: "third author"
+            author: "third author",
+            reserved: true
         },
         {
             id: "124",
             title: "four Title",
-            author: "four author"
+            author: "four author",
+            reserved: true
         },
         {
             id: "125",
             title: "five Title",
-            author: "five author"
+            author: "five author",
+            reserved: true
         },
     ]
 

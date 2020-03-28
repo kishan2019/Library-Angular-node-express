@@ -23,7 +23,7 @@ export class BooksService {
     }
 
     addBooks(title: string, author: string) {
-        const book: Book = { id: null, title: title, author: author };
+        const book: Book = { id: null, title: title, author: author , reserved: false};
         this.http
             .post<{ message: string }>('http://localhost:3000/api/books', book)
             .subscribe(responseData => {
