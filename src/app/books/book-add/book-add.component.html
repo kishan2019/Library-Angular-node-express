@@ -1,16 +1,8 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>Admin</span>
-    <span><a [routerLink]="['/admin']">go Back </a></span>
-  </mat-toolbar-row>
-</mat-toolbar>
-
+<div class="btn-layout">
+<button mat-flat-button  [routerLink]="['/admin']" color="primary">go Back</button>
+</div>
 <section class="book-add" fxLayoutAlign="center">
-<mat-card>
-    <mat-card-header>
-      <mat-card-title>Add New Books</mat-card-title>
-    </mat-card-header>
-
+   <mat-card>
     <form (submit)="onAddBook(bookForm)" #bookForm="ngForm" fxLayout="column" fxLayoutAlign="center center">
       <mat-form-field>
         <input 
@@ -36,7 +28,7 @@
       <button 
       color="primary" 
       mat-raised-button 
-      type="submit">Add Book</button>
+      type="submit">Submit</button>
     </form>
   </mat-card>
 </section>

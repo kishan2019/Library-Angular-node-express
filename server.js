@@ -39,13 +39,13 @@ app.get("/api/books", (req, res, next) => {
             id: "124",
             title: "four Title",
             author: "four author",
-            reserved: true
+            reserved: false
         },
         {
             id: "125",
             title: "five Title",
             author: "five author",
-            reserved: true
+            reserved: false
         },
     ]
 

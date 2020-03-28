@@ -3,7 +3,7 @@
       <h2> {{book.title}}</h2>
       <p>{{book.author}}</p>
       <main>
-        <button mat-button color="primary">Edit</button>
+        <button mat-button color="primary" (click)="editBook()">Edit</button>
         <button mat-button color="warn">Delete</button>
       </main>
     </mat-card>
