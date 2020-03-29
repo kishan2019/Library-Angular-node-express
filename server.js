@@ -10,18 +10,12 @@ app.use(
       extended: true,
     }));
 
-const db = require('./backend/query');
-
-app.post("/api/books", (req, res, next) => {
-    const book = req.body;
-    console.log(book);
-    res.status(201).json({
-        message: 'book added successfully'
-    });
-
-});
+const db = require('./backend/querys');
 
 app.get("/api/books", db.getBooks);
+app.post("/api/book", db.addBook);
+app.put('/api/book/:id', db.updateBook);
+app.delete('/api/book/:id', db.deleteBook);
 
 const port = 3000;
 
