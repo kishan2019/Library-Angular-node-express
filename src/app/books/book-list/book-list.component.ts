@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Subscription} from 'rxjs';
-import { Book } from '../books/book.model';
-import { BooksService } from '../books/books.service';
+import { Book } from '../book.model';
+import { BooksService } from '../books.service';
 
 @Component({
   selector: 'app-book-list',
@@ -26,6 +26,10 @@ export class BookListComponent implements OnInit, OnDestroy {
 
   editBook(): void {
     this.router.navigate(["editbook"]);
+  }
+
+  onDelete(bookId: string){
+    this.booksService.deleteBook(bookId);
   }
 
   ngOnDestroy(){

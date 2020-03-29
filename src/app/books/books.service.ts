@@ -23,7 +23,7 @@ export class BooksService {
     }
 
     addBooks(title: string, author: string) {
-        const book: Book = { id: null, title: title, author: author , reserved: false};
+        const book: Book = {id: null, title: title, author: author , reserved: false};
         this.http
             .post<{ message: string }>('http://localhost:3000/api/books', book)
             .subscribe(responseData => {
@@ -33,4 +33,12 @@ export class BooksService {
             })
     }
 
+    deleteBook(bookId: string) {
+        this.http.delete("http://localhost:3000/api/books/" + bookId)
+        .subscribe(() => {
+            const updatedBooks = this.books.filter(book => book.id != bookId);
+            this.books = updatedBooks;
+            this.booksUpdated.next([...this.books]);
+        })
+    }
 }
