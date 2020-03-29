@@ -6,8 +6,6 @@ import {LoginComponent} from './login/login.component';
 import {AdminComponent} from './admin/admin.component';
 import { BookAddComponent } from './books/book-add/book-add.component';
 
-
-
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LoginComponent },

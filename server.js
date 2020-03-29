@@ -9,10 +9,10 @@ app.use(bodyParser.json());
 const db = require('./backend/querys');
 
 app.get("/api/books", db.getBooks);
-app.get("/api/book/:id", db.getBookById);
-app.post("/api/book", db.addBook);
-app.put('/api/book/:id', db.updateBook);
-app.delete('/api/book/:id', db.deleteBook);
+app.get("/api/books/:id", db.getBookById);
+app.post("/api/books", db.addBook);
+app.put('/api/books/:id', db.updateBook);
+app.delete('/api/books/:id', db.deleteBook);
 
 const port = 3000;
 

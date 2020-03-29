@@ -25,13 +25,14 @@ const getBooks = (request, response) => {
 }
 
 const addBook = (request, response) => {
+
   const { title, author } = request.body
 
-  pool.query('INSERT INTO library (title, author, registered) VALUES ($1, $2, false)', [title, author], (error, results) => {
+  pool.query('INSERT INTO library (title, author, reserved) VALUES ($1, $2, false)', [title, author], (error, results) => {
     if (error) {
       throw error
     }
-    response.status(201).send(`Book added with ID: ${result.insertId}`)
+    response.status(201).send(`Book added with ID: ${results.insertId}`)
   })
 }
 
