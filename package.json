@@ -27,6 +27,7 @@
     "express": "^4.17.1",
     "materialize-css": "^1.0.0-rc.2",
     "ngx-float-button": "^1.0.0",
+    "pg": "^7.18.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

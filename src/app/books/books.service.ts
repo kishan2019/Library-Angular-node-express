@@ -27,7 +27,7 @@ export class BooksService {
         this.http
             .post<{ message: string }>('http://localhost:3000/api/books', book)
             .subscribe(responseData => {
-                console.log(responseData.message)
+                console.log(responseData.message);
                 this.books.push(book);
                 this.booksUpdated.next([...this.books])
             })

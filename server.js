@@ -5,6 +5,12 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(
+    bodyParser.urlencoded({
+      extended: true,
+    }));
+
+const db = require('./backend/query');
 
 app.post("/api/books", (req, res, next) => {
     const book = req.body;
@@ -15,45 +21,7 @@ app.post("/api/books", (req, res, next) => {
 
 });
 
-app.get("/api/books", (req, res, next) => {
-    const books = [
-        {
-            id: "121",
-            title: "first Title",
-            author: "first author",
-            reserved: true
-        },
-        {
-            id: "122",
-            title: "second Title",
-            author: "second author",
-            reserved: false
-        },
-        {
-            id: "123",
-            title: "third Title",
-            author: "third author",
-            reserved: true
-        },
-        {
-            id: "124",
-            title: "four Title",
-            author: "four author",
-            reserved: false
-        },
-        {
-            id: "125",
-            title: "five Title",
-            author: "five author",
-            reserved: false
-        },
-    ]
-
-    res.json({
-        message: 'books fetched successfully',
-        books: books
-    });
-});
+app.get("/api/books", db.getBooks);
 
 const port = 3000;
 
