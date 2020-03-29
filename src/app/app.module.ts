@@ -1,3 +1,4 @@
+import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { ViewListComponent } from './view-list/view-list.component';
 import { UserComponent } from './user/user.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,7 +14,7 @@ import { MaterialModules } from './material.module';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { AdminComponent } from './admin/admin.component'
-import { BookAddComponent } from './books/book-add/book.component';
+import { BookAddComponent } from './books/book-add/book-add.component';
 import { BookListComponent } from './book-list/book-list.component';
 
 
@@ -26,7 +27,8 @@ import { BookListComponent } from './book-list/book-list.component';
     BookAddComponent,
     BookListComponent,
     UserComponent,
-    ViewListComponent
+    ViewListComponent,
+    BookEditComponent
   ],
   imports: [
     BrowserModule,

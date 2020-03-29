@@ -1,9 +1,10 @@
+import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {UserComponent} from './user/user.component';
 import {LoginComponent} from './login/login.component';
 import {AdminComponent} from './admin/admin.component';
-import { BookAddComponent } from './books/book-add/book.component';
+import { BookAddComponent } from './books/book-add/book-add.component';
 
 
 
@@ -13,6 +14,8 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'user', component: UserComponent },
   { path: 'addbook', component: BookAddComponent },
+  { path: 'editbook', component: BookEditComponent },
+
 ];
 
 @NgModule({

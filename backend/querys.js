@@ -1,5 +1,16 @@
 const { pool } = require('./postgrespool');
 
+const getBookById = (request, response) => {
+  const id = parseInt(request.params.id)
+
+  pool.query('SELECT * FROM library WHERE id = $1', [id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
 const getBooks = (request, response) => {
   pool.query('SELECT * FROM library ORDER BY id ASC', (error, results) => {
     if (error) {
@@ -52,6 +63,7 @@ const deleteBook = (request, response) => {
 }
 
 module.exports = {
+  getBookById,
   getBooks,
   addBook,
   updateBook,

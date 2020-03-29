@@ -3,7 +3,7 @@
 </div>
 <section class="book-add" fxLayoutAlign="center">
    <mat-card>
-    <form (submit)="onAddBook(bookForm)" #bookForm="ngForm" fxLayout="column" fxLayoutAlign="center center">
+    <form (submit)="onEditBook(bookForm)" #bookForm="ngForm" fxLayout="column" fxLayoutAlign="center center">
       <mat-form-field>
         <input 
         matInput 
@@ -28,7 +28,7 @@
       <button 
       color="primary" 
       mat-raised-button 
-      type="submit">Add Book</button>
+      type="submit">Update Book</button>
     </form>
   </mat-card>
 </section>

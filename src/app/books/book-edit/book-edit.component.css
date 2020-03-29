@@ -1,0 +1,22 @@
+.book-add {
+        margin: 2rem auto;  
+    }
+
+mat-form-field {
+    width: 80%;
+}
+
+form {
+    width: 600px;
+    height: 400px;
+    
+}
+
+.btn-layout {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+button {
+    margin: 2rem;
+}

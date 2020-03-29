@@ -25,7 +25,7 @@ export class BookListComponent implements OnInit, OnDestroy {
   }
 
   editBook(): void {
-    this.router.navigate(["addbook"]);
+    this.router.navigate(["editbook"]);
   }
 
   ngOnDestroy(){
