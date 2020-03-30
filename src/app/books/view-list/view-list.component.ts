@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Subscription} from 'rxjs';
-import { Book } from '../books/book.model';
-import { BooksService } from '../books/books.service';
+import { Book } from '../book.model';
+import { BooksService } from '../books.service';
 
 @Component({
   selector: 'app-view-list',

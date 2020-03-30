@@ -1,4 +1,4 @@
-import { Book } from '../books/book.model';
+import { Book } from '../book.model';
 import { PipeTransform, Pipe } from '@angular/core';
 
 @Pipe({

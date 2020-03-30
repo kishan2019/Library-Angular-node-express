@@ -1,6 +1,6 @@
-import { BookFilterPipe } from './view-list/book-filter.pipe';
+import { BookFilterPipe } from './books/view-list/book-filter.pipe';
 import { BookEditComponent } from './books/book-edit/book-edit.component';
-import { ViewListComponent } from './view-list/view-list.component';
+import { ViewListComponent } from './books/view-list/view-list.component';
 import { UserComponent } from './user/user.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
