@@ -23,7 +23,7 @@ export class BooksService {
     }
 
     getBook(id: string){
-        return this.http.get<{ id: string; title: string; author: string }>(
+        return this.http.get<{ id: string, title: string, author: string, reserved: boolean }>(
             "http://localhost:3000/api/books/" + id
         );
     }
@@ -32,7 +32,7 @@ export class BooksService {
         const book: Book = {id: null, title: title, author: author , reserved: false};
         this.http
             .post('http://localhost:3000/api/books', book)
-            .subscribe(responseData => {
+            .subscribe(() => {
                 this.books.push(book);
                 this.booksUpdated.next([...this.books])
             })
@@ -42,7 +42,7 @@ export class BooksService {
         const book: Book = { id: id, title: title, author: author, reserved: false };
         this.http
           .put("http://localhost:3000/api/books/" + id, book)
-          .subscribe(response => {
+          .subscribe(() => {
             const updatedBooks = [...this.books];
             const oldBookIndex = updatedBooks.findIndex(p => p.id === book.id);
             updatedBooks[oldBookIndex] = book;

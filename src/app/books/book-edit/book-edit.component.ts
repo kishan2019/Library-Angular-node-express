@@ -23,9 +23,9 @@ export class BookEditComponent implements OnInit {
         this.bookId = paramMap.get("bookId");
         this.booksService.getBook(this.bookId).subscribe(bookData => {
             this.book = {
-                id: bookData.id, 
-                title: bookData.title, 
-                author: bookData.author, 
+                id: bookData[0].id, 
+                title: bookData[0].title, 
+                author: bookData[0].author, 
                 reserved: false
             };
           });
