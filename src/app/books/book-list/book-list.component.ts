@@ -13,7 +13,6 @@ export class BookListComponent implements OnInit, OnDestroy {
   books: Book[] = [];
   private booksSub: Subscription;
 
-
   constructor(public booksService: BooksService, private router: Router){ }
 
   ngOnInit(){

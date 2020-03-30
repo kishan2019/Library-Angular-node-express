@@ -25,20 +25,19 @@ export class BooksService {
     addBooks(title: string, author: string) {
         const book: Book = {id: null, title: title, author: author , reserved: false};
         this.http
-            .post<{ message: string }>('http://localhost:3000/api/books', book)
+            .post('http://localhost:3000/api/books', book)
             .subscribe(responseData => {
-                console.log(responseData.message);
                 this.books.push(book);
                 this.booksUpdated.next([...this.books])
             })
     }
 
     deleteBook(bookId: string) {
-        this.http.delete("http://localhost:3000/api/books/" + bookId)
-        .subscribe(() => {
-            const updatedBooks = this.books.filter(book => book.id != bookId);
-            this.books = updatedBooks;
-            this.booksUpdated.next([...this.books]);
+        this.http
+            .delete("http://localhost:3000/api/books/" + bookId)
+            .subscribe(() => {
+                const updatedBooks = this.books.filter(book => book.id !== bookId);
+                this.booksUpdated.next([...updatedBooks]);
         })
     }
 }
