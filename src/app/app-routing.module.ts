@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'user', component: UserComponent },
   { path: 'addbook', component: BookAddComponent },
-  { path: 'editbook', component: BookEditComponent },
+  { path: 'editbook/:bookId', component: BookEditComponent },
 
 ];
 

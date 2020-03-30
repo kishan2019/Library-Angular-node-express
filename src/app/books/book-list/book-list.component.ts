@@ -1,4 +1,3 @@
-import { Router } from '@angular/router';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Subscription} from 'rxjs';
 import { Book } from '../book.model';
@@ -13,7 +12,7 @@ export class BookListComponent implements OnInit, OnDestroy {
   books: Book[] = [];
   private booksSub: Subscription;
 
-  constructor(public booksService: BooksService, private router: Router){ }
+  constructor(public booksService: BooksService){ }
 
   ngOnInit(){
     this.booksService.getBooks();
@@ -23,12 +22,9 @@ export class BookListComponent implements OnInit, OnDestroy {
     });
   }
 
-  editBook(): void {
-    this.router.navigate(["editbook"]);
-  }
-
   onDelete(bookId: string){
     this.booksService.deleteBook(bookId);
+    this.booksService.getBooks()
   }
 
   ngOnDestroy(){

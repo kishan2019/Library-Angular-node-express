@@ -3,7 +3,7 @@
       <h2> {{book.title}}</h2>
       <p>{{book.author}}</p>
       <main>
-        <button mat-button color="primary" (click)="editBook()">Edit</button>
+        <a [routerLink]="['/editbook', book.id]">EDIT</a>
         <button mat-button color="warn" (click)="onDelete(book.id)">Delete</button>
       </main>
     </mat-card>

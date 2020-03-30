@@ -9,7 +9,7 @@
         matInput 
         name="title" 
         placeholder="title"
-        ngModel
+        [ngModel]="book?.title"
         required
         #title="ngModel">
         <mat-error *ngIf="title.invalid">Please Enter a Title</mat-error>
@@ -20,7 +20,7 @@
         matInput 
         name="author"
         placeholder="author"
-        ngModel
+        [ngModel]="book?.author"
         required
         #author="ngModel">
         <mat-error *ngIf="author.invalid">Please Enter a author</mat-error>
