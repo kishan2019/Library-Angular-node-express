@@ -1,13 +1,20 @@
+  <mat-card>
+    <mat-form-field class="search">
+      <mat-label>search book</mat-label>
+      <input matInput placeholder="title" [(ngModel)]="filterSearch">
+    </mat-form-field>
+  </mat-card>
+
 <section *ngIf="books.length > 0">
-    <mat-card *ngFor="let book of books">
+    <mat-card *ngFor="let book of books | bookFilter: filterSearch">
       <h2> {{book.title}}</h2>
       <p>{{book.author}}</p>
       <div *ngIf="book.reserved; else reservebtn">
-        <button mat-raised-button color="accent" (click)="onAddStatus()">reserved</button>
+        <button mat-raised-button color="accent" >reserved</button>
       </div>
       <ng-template #reservebtn>
-        <button mat-raised-button color="accent" (click)="onAddStatus()">reserve</button>
-      </ng-template>
+        <button mat-raised-button color="accent" >reserve</button>
+      </ng-template> 
       
     </mat-card>
    </section>

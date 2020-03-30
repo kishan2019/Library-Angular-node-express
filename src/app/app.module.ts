@@ -1,3 +1,4 @@
+import { BookFilterPipe } from './view-list/book-filter.pipe';
 import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { ViewListComponent } from './view-list/view-list.component';
 import { UserComponent } from './user/user.component';
@@ -28,7 +29,8 @@ import { BookListComponent } from './books/book-list/book-list.component';
     BookListComponent,
     UserComponent,
     ViewListComponent,
-    BookEditComponent
+    BookEditComponent,
+    BookFilterPipe
   ],
   imports: [
     BrowserModule,

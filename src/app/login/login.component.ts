@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     this.login(this.username, this.password)
 }
 login(user,password): void {
-  if (user == 'admin' && password == 'admin') {
+  if (user == 'admin') {
     this.router.navigate(["admin"]);
   } else {
     this.router.navigate(["user"]);

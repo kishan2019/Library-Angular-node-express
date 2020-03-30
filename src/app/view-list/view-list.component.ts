@@ -11,20 +11,17 @@ import { BooksService } from '../books/books.service';
 export class ViewListComponent implements OnInit, OnDestroy {
   books: Book[] = [];
   private booksSub: Subscription;
+  filterSearch: string;
 
- 
   constructor(public booksService: BooksService){ }
 
   ngOnInit(){
+    console.log(this.filterSearch)
     this.booksService.getBooks();
     this.booksSub = this.booksService.getBookUpdateListener()
     .subscribe((books: Book[]) => {
       this.books = books;
     });
-  }
-
-  onAddStatus(): void {
-    
   }
 
   ngOnDestroy(){
