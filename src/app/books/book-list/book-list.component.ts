@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Subscription} from 'rxjs';
-import { Book } from '../books/book.model';
-import { BooksService } from '../books/books.service';
+import { Book } from '../book.model';
+import { BooksService } from '../books.service';
 
 @Component({
   selector: 'app-book-list',
@@ -13,7 +13,7 @@ export class BookListComponent implements OnInit, OnDestroy {
   books: Book[] = [];
   private booksSub: Subscription;
 
- 
+
   constructor(public booksService: BooksService, private router: Router){ }
 
   ngOnInit(){
@@ -29,7 +29,7 @@ export class BookListComponent implements OnInit, OnDestroy {
   }
 
   onDelete(bookId: string){
-    //  this.booksService.deleteBook(bookId);
+    this.booksService.deleteBook(bookId);
   }
 
   ngOnDestroy(){

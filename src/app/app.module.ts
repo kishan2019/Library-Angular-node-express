@@ -15,7 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { AdminComponent } from './admin/admin.component'
 import { BookAddComponent } from './books/book-add/book-add.component';
-import { BookListComponent } from './book-list/book-list.component';
+import { BookListComponent } from './books/book-list/book-list.component';
 
 
 @NgModule({
