@@ -12,11 +12,15 @@ form {
     
 }
 
-.btn-layout {
-    display: flex;
-    flex-direction: row-reverse;
-}
-
 button {
     margin: 2rem;
+}
+
+.space {
+    flex: 1 1 auto;
+}
+
+a { 
+    color: white;
+    text-decoration: none;
 }

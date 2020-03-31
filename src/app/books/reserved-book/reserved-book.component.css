@@ -10,6 +10,17 @@
 mat-card {
     margin-top: 1rem;
 }
-a {
+
+.main {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.space {
+    flex: 1 1 auto;
+}
+
+a{
+    color: white;
     text-decoration: none;
 }

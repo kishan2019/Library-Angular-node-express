@@ -1,10 +1,18 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Admin</span>
+    <span class="space"></span>
+    <span><button mat-flat-button color="primary" [routerLink]="['/login']">Logout</button></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <div *ngIf="username"> 
 <h1 class="greet">Welcome {{username}}</h1>
 </div>
 
-<main>
+<section>
   <app-book-list></app-book-list>
-</main>
+</section>
 
 <footer>
   <button class="footer" mat-raised-button color="primary" (click)="addNewBook()">AddNewBook</button>

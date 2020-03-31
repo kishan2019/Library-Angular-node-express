@@ -1,6 +1,11 @@
-<div class="btn-layout">
-<button mat-flat-button  [routerLink]="['/admin']" color="primary">go Back</button>
-</div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span><a  [routerLink]="['/admin']" >Admin</a></span>
+    <span class="space"></span>
+    <span><button mat-flat-button color="primary" [routerLink]="['/login']">Logout</button></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <section class="book-add" fxLayoutAlign="center">
    <mat-card>
     <form (submit)="onAddBook(bookForm)" #bookForm="ngForm" fxLayout="column" fxLayoutAlign="center center">

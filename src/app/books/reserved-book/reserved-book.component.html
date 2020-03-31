@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span><a [routerLink]="['/user']">User</a></span>
+    <span class="space"></span>
+    <span>
+        <button mat-flat-button 
+        color="primary" 
+        [routerLink]="['/login']">Logout</button>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="main">
+  <section *ngIf="books.length > 0">
+    <div *ngFor="let book of books">
+      <mat-card *ngIf="!book.reserved">
+          <h2> {{book.title}}</h2>
+          <p>{{book.author}}</p>
+      </mat-card>
+    </div>
+    
+   </section>
+   <p class="info-text mat-body-1" *ngIf="books.length <= 0">Not single book yet</p>
+</div>
+   

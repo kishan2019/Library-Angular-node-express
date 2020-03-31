@@ -1,8 +1,9 @@
   <mat-card>
-    <mat-form-field class="search">
-      <mat-label>search book</mat-label>
-      <input matInput placeholder="title" [(ngModel)]="filterSearch">
-    </mat-form-field>
+  <mat-form-field class="search" appearance="outline">
+    <mat-label>Search book</mat-label>
+    <input matInput placeholder="title" [(ngModel)]="filterSearch">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
   </mat-card>
 
 <section *ngIf="books.length > 0">

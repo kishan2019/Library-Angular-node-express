@@ -1,3 +1,4 @@
+import { ReservedBookComponent } from './books/reserved-book/reserved-book.component';
 import { BookFilterPipe } from './books/view-list/book-filter.pipe';
 import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { ViewListComponent } from './books/view-list/view-list.component';
@@ -30,6 +31,7 @@ import { BookListComponent } from './books/book-list/book-list.component';
     UserComponent,
     ViewListComponent,
     BookEditComponent,
+    ReservedBookComponent,
     BookFilterPipe
   ],
   imports: [

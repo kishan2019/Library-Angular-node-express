@@ -1,6 +1,17 @@
-<div *ngIf="username"> 
-<h1 class="greet">Welcome {{username}}</h1>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>User</span>
+    <span class="space"></span>
+    <span>
+      <button mat-flat-button color="primary" [routerLink]="['/login']">Logout</button>
+      <button mat-flat-button [routerLink]="['/myresbook']" color="primary">My Reserve book</button>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div *ngIf="username">
+  <h1 class="greet">Welcome {{username}}</h1>
 </div>
-<main>
-    <app-view-list></app-view-list>
-</main>
+<section>
+  <app-view-list></app-view-list>
+</section>

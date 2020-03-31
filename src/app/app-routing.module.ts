@@ -1,3 +1,4 @@
+import { ReservedBookComponent } from './books/reserved-book/reserved-book.component';
 import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'addbook', component: BookAddComponent },
   { path: 'editbook/:bookId', component: BookEditComponent },
+  { path: 'myresbook', component: ReservedBookComponent},
 
 ];
 
