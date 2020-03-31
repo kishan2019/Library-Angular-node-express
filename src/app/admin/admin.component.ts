@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 export class AdminComponent implements OnInit {
 username: string;
 
-
   constructor(private router: Router, private data: LoginService) { }
   ngOnInit() {
     this.data.currentUser.subscribe(username => this.username = username)

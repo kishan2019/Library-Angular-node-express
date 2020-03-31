@@ -38,12 +38,12 @@ const addBook = (request, response) => {
 }
 
 const updateBook = (request, response) => {
-  const id = parseInt(request.params.id)
-  const { title, author } = request.body
+  const id = parseInt(request.params.id);
+  const { title, author, reserved } = request.body
 
   pool.query(
-    'UPDATE library SET title = $1, author = $2 WHERE id = $3',
-    [title, author, id],
+    'UPDATE library SET title = $1, author = $2, reserved = $3 WHERE id = $4',
+    [title, author, reserved, id],
     (error, results) => {
       if (error) {
         throw error

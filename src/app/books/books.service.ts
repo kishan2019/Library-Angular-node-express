@@ -38,8 +38,8 @@ export class BooksService {
             })
     }
 
-    updateBook(id: string, title: string, author: string) {
-        const book: Book = { id: id, title: title, author: author, reserved: false };
+    updateBook(id: string, title: string, author: string, reserved: boolean) {
+        const book: Book = { id: id, title: title, author: author, reserved: reserved };
         this.http
           .put("http://localhost:3000/api/books/" + id, book)
           .subscribe(() => {

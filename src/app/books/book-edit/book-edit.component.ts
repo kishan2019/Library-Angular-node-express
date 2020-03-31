@@ -34,8 +34,7 @@ export class BookEditComponent implements OnInit {
 
     onEditBook(form: NgForm) {
         if(form.invalid) return;
-        this.booksService.updateBook(this.bookId,form.value.title, form.value.author);
-        form.resetForm();
+        this.booksService.updateBook(this.bookId, form.value.title, form.value.author, false);
         form.resetForm();
     }
 }
