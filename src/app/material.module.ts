@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
         MatMenuModule,
         MatIconModule,
         MatExpansionModule,
+        MatButtonToggleModule
         
     ],
 
@@ -31,6 +33,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
         MatMenuModule,
         MatIconModule,
         MatExpansionModule,
+        MatButtonToggleModule
         
     ]
 })

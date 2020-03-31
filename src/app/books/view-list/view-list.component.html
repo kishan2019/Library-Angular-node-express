@@ -10,12 +10,13 @@
       <h2> {{book.title}}</h2>
       <p>{{book.author}}</p>
       <div *ngIf="book.reserved; else reservebtn">
-        <button mat-raised-button (click)="onReserved(book)">Reserved</button>
+        <mat-button-toggle (click)="onReserved(book)" #togVal>{{ togVal.checked ? 'Reserved' : 'Reserve' }}</mat-button-toggle>
       </div>
       <ng-template #reservebtn>
-        <button mat-raised-button color="accent" (click)="onReserved(book)">reserve</button>
+        <mat-button-toggle (click)="onReserved(book)" #togVal>{{ togVal.checked ? 'Reserve' : 'Reserved' }}</mat-button-toggle>
       </ng-template> 
     </mat-card>
    </section>
    <p class="info-text mat-body-1" *ngIf="books.length <= 0">Not single book yet</p>
+
    
