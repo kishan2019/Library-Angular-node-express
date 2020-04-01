@@ -1,3 +1,4 @@
+import { User } from './user.model';
 import { Book } from './book.model'
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core';
@@ -6,7 +7,10 @@ import { Subject } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class BooksService {
     private books: Book[] = [];
+    private users: User[] = [];
     private booksUpdated = new Subject<Book[]>();
+    private usersUpdated = new Subject<User[]>();
+
 
     constructor(private http: HttpClient) { }
 
@@ -20,6 +24,9 @@ export class BooksService {
 
     getBookUpdateListener() {
         return this.booksUpdated.asObservable();
+    }
+    getUserUpdateListener() {
+        return this.usersUpdated.asObservable();
     }
 
     getBook(id: string){
@@ -59,4 +66,24 @@ export class BooksService {
                 this.booksUpdated.next([...updatedBooks]);
         })
     }
+
+    getUsers() {
+        this.http.get<{users: User[] }>('http://localhost:3000/api/getUsers')
+            .subscribe((userData) => {
+                 this.users = userData['books'];
+                 this.usersUpdated.next([...this.users]);
+            });
+    }
+
+    addRegisteredUser(id: string, username: string){
+        const user: User = {bookid: id, username: username};
+        this.http
+            .post('http://localhost:3000/api/addReservedUser', user)
+            .subscribe(() => {
+                this.users.push(user);
+                this.usersUpdated.next([...this.users])
+            })
+
+    }
+
 }

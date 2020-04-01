@@ -13,6 +13,8 @@ app.get("/api/books/:id", db.getBookById);
 app.post("/api/books", db.addBook);
 app.put('/api/books/:id', db.updateBook);
 app.delete('/api/books/:id', db.deleteBook);
+app.get('/api/getUsers', db.getUsers);
+app.post('/api/addReservedUser', db.addReservedUser);
 
 const port = 3000;
 

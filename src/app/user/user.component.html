@@ -10,7 +10,7 @@
 </mat-toolbar>
 
 <div *ngIf="username">
-  <h1 class="greet">Welcome {{username}}</h1>
+  <h1 class="greet">Welcome {{username | uppercase}}</h1>
 </div>
 <section>
   <app-view-list></app-view-list>

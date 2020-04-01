@@ -26,9 +26,7 @@ const getBooks = (request, response) => {
 }
 
 const addBook = (request, response) => {
-
   const { title, author } = request.body
-
   pool.query('INSERT INTO library (title, author, reserved) VALUES ($1, $2, false)', [title, author], (error, results) => {
     if (error) {
       throw error
@@ -64,10 +62,35 @@ const deleteBook = (request, response) => {
   })
 }
 
+const getUsers = (request, response) => {
+  pool.query('SELECT * FROM bookreservedetail ORDER BY id ASC', (error, results) => {
+    if (error) {
+      throw error
+    }
+    const users = [...results.rows];
+    response.status(200).json({
+      message: 'reserved users fetched successfully',
+        books: users
+    })   
+  })
+}
+
+const addReservedUser = (request, response) => {
+  const { bookid, username } = request.body
+  pool.query('INSERT INTO bookreservedetail (bookid, username) VALUES ($1, $2)', [bookid, username], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(201).send(`reserved users added with ID: ${results.insertId}`)
+  })
+}
+
 module.exports = {
   getBookById,
   getBooks,
   addBook,
   updateBook,
-  deleteBook
+  deleteBook,
+  getUsers,
+  addReservedUser
 }

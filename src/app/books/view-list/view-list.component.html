@@ -10,14 +10,17 @@
     <mat-card *ngFor="let book of books | bookFilter: filterSearch">
       <h2> {{book.title}}</h2>
       <p>{{book.author}}</p>
-      <div *ngIf="book.reserved; else reservebtn">
-        <mat-button-toggle (click)="onReserved(book)" #togVal>{{ togVal.checked ? 'Reserved' : 'Reserve' }}</mat-button-toggle>
-      </div>
-      <ng-template #reservebtn>
-        <mat-button-toggle (click)="onReserved(book)" #togVal>{{ togVal.checked ? 'Reserve' : 'Reserved' }}</mat-button-toggle>
-      </ng-template> 
+      <div *ngFor="let user of users">
+        <div *ngIf="book.id == user.bookid">
+          <div *ngIf="book.reserved">
+            <mat-button-toggle  #togVal disabled>{{ togVal.checked ? 'Reserve' : 'Reserved' }}</mat-button-toggle>
+             <span> by </span>{{ user.username}}
+          </div>
+        </div>
+    </div>
+    <div *ngIf="!book.reserved">
+      <mat-button-toggle (click)="onReserved(book)" #togVal>{{ togVal.checked ? 'Reserved' : 'Reserve' }}</mat-button-toggle>
+    </div>
     </mat-card>
    </section>
    <p class="info-text mat-body-1" *ngIf="books.length <= 0">Not single book yet</p>
-
-   
