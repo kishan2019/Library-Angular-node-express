@@ -20,7 +20,6 @@ export class ViewListComponent implements OnInit, OnDestroy {
   toggle: boolean = false;
   username: string;
 
-
   constructor(public booksService: BooksService, private data: LoginService, public router: Router){ }
 
   ngOnInit(){

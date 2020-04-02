@@ -13,7 +13,7 @@
 <div class="main">
   <section *ngIf="books.length > 0">
     <div *ngFor="let book of books">
-      <mat-card *ngIf="!book.reserved">
+      <mat-card *ngIf="book.reserved">
           <h2> {{book.title}}</h2>
           <p>{{book.author}}</p>
       </mat-card>
